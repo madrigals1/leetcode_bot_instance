@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  leetcode_bot:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    image: madrigals1/leetcode_bot:latest
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:${PORT}"
+    command: npm start
+    networks:
+      - database_network
+    volumes:
+      - "./database:/usr/src/app/database/"
+
+networks:
+  database_network:
+    external:
+      name: ${DATABASE_NETWORK}

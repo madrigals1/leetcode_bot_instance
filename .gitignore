@@ -1,0 +1,6 @@
+# Environment
+.env
+
+# Database
+database/*/*
+!database/*/*.keep
