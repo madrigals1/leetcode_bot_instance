@@ -7,8 +7,6 @@ services:
     image: madrigals1/leetcode_bot:latest
     env_file:
       - .env
-    ports:
-      - "${PORT}:${PORT}"
     command: npm start
     networks:
       - database_network
